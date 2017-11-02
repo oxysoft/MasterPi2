@@ -2,4 +2,4 @@
 
 ![](medias/Game.gif)
 
-![](medias/GameEditor.gif)
+![](medias/GroupEditor.gif)
