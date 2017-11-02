@@ -1,5 +1,5 @@
 # MasterPi²
 
-![](Medias/Game.gif)
+![](medias/Game.gif)
 
-![](Medias/GameEditor.gif)
+![](medias/GameEditor.gif)
