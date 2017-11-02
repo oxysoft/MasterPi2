@@ -1,0 +1,136 @@
+{
+  "structure": {
+    "groups": [
+      {
+        "id": 0,
+        "characters": "141592",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 1,
+        "characters": "6535",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 1,
+        "characters": "8979",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 2,
+        "characters": "3238",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 2,
+        "characters": "4626",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 3,
+        "characters": "43383",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 3,
+        "characters": "27950",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 4,
+        "characters": "28841",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 4,
+        "characters": "97169",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 4,
+        "characters": "39937",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 5,
+        "characters": "51058",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 5,
+        "characters": "20974",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 5,
+        "characters": "94459",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 5,
+        "characters": "23078",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 5,
+        "characters": "16406",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 6,
+        "characters": "28620",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 6,
+        "characters": "89986",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 6,
+        "characters": "28034",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 6,
+        "characters": "82534",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 6,
+        "characters": "21170",
+        "success": 0,
+        "fails": 0
+      },
+      {
+        "id": 6,
+        "characters": "6798",
+        "success": 0,
+        "fails": 0
+      }
+    ]
+  },
+  "options": {
+    "goal": 100,
+    "enableSetbacks": true
+  }
+}
