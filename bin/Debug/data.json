@@ -104,13 +104,13 @@
         "fails": 0
       },
       {
-        "id": 6,
+        "id": 7,
         "characters": "28034",
         "success": 0,
         "fails": 0
       },
       {
-        "id": 6,
+        "id": 7,
         "characters": "82534",
         "success": 0,
         "fails": 0
@@ -131,6 +131,6 @@
   },
   "options": {
     "goal": 100,
-    "enableSetbacks": true
+    "enableSetbacks": false
   }
 }

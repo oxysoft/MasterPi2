@@ -5,9 +5,7 @@ using MasterPI2.Consoles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using SadConsole;
-using SadConsole.Effects;
 using SadConsole.Input;
-using Console = SadConsole.Console;
 
 namespace MasterPI2.Logic
 {
@@ -22,6 +20,7 @@ namespace MasterPI2.Logic
 		public char NextDigit => CurrentGroup[iDigit];
 		
 		public bool isRevealUnentered;
+		int minGroup = -1;
 
 		public GameScreen(MasterPiConsole c, Data dat) : base(c)
 		{
@@ -49,18 +48,43 @@ namespace MasterPI2.Logic
 			{
 				if (k.Key == Keys.Enter)
 				{
-					NextScreen = new MenuScreen(c, dat);
+					NextScreen = new GameScreen(c, dat) {
+						minGroup = minGroup,
+						iGroup = minGroup
+					};
+					
 					Finish();
 				}
 			} else
 			{
+				if (k.Key == Keys.R)
+					isRevealUnentered = !isRevealUnentered;
+				
+				if (k.Key == Keys.Left)
+					DecrementGroup();
+				else if (k.Key == Keys.Right)
+					IncrementGroup();
+				else if (k.Key == Keys.Space)
+				{
+					if (minGroup == -1)
+						minGroup = iGroup;
+					else
+						minGroup = -1;
+				}
+				
 				// game running
 				if (k.Character == NextDigit)
 				{
 					Advance();
 				} else if (char.IsDigit(k.Character))
 				{
-					Fail();
+					if (dat.options.enableSetbacks)
+					{
+						DecrementGroup();
+					} else
+					{
+						Fail();
+					}
 				}
 			}
 		}
@@ -69,6 +93,18 @@ namespace MasterPI2.Logic
 		{
 			isGameEnded = true;
 			isRevealUnentered = true;
+		}
+		
+		private void DecrementGroup()
+		{
+			iDigit = 0;
+			iGroup = Math.Max(iGroup - 1, minGroup != -1 ? minGroup : 0);
+		}
+		
+		private void IncrementGroup()
+		{
+			iDigit = 0;
+			iGroup = Math.Min(groups.Count - 1, iGroup + 1);
 		}
 		
 		private bool isGameEnded;
@@ -118,7 +154,7 @@ namespace MasterPI2.Logic
 				Color fgColor = Configuration.ID_COLORS[g.id % Configuration.ID_COLORS.Length];
 				Color bgColor = Color.Black;
 				if (i < iGroup)
-					bgColor = Color.Lerp(Color.Blue, Color.Black, 0.5f);
+					bgColor = Color.Lerp(Color.Blue, Color.Black, 0.3f);
 				
 				bool isPastCursor = i > iGroup; 
 					
@@ -143,6 +179,11 @@ namespace MasterPI2.Logic
 		                	ch = '.';
 		                else
 			                fgColor = Color.Gray;
+	                }
+	                
+	                if (minGroup >= 0 && i < minGroup)
+	                {
+		                fgColor = Color.DarkGray;
 	                }
 	                
                     // Draw character
